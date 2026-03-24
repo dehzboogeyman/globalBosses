@@ -152,6 +152,34 @@ end
 overheatedDamage:interval(1000)
 overheatedDamage:register()
 
+local unchainedHealBoss = GlobalEvent("self.magma-bubble.unchained-heal.onThink")
+function unchainedHealBoss.onThink(interval, lastExecution)
+	local boss = nil
+	for _, creature in ipairs(bossZone:getCreatures()) do
+		if creature:isMonster() and creature:getName():lower() == "magma bubble" then
+			boss = creature
+			break
+		end
+	end
+	if not boss or boss:getHealth() <= 0 then
+		return true
+	end
+	for _, creature in ipairs(bossZone:getCreatures()) do
+		if creature:isMonster() and creature:getName():lower() == "unchained fire" then
+			local distance = boss:getPosition():getDistance(creature:getPosition())
+			if distance <= 3 then
+				local healAmount = math.random(2000, 4000)
+				boss:addHealth(healAmount)
+				boss:getPosition():sendMagicEffect(CONST_ME_MAGIC_RED)
+			end
+		end
+	end
+	return true
+end
+
+unchainedHealBoss:interval(2000)
+unchainedHealBoss:register()
+
 local crystalsCycle = GlobalEvent("self.magma-bubble.crystals.onThink")
 function crystalsCycle.onThink(interval, lastExecution)
 	local zoneItems = bossZone:getItems()

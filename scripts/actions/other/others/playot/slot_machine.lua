@@ -1,7 +1,7 @@
 local slotmachine = Action()
 slotmachine:aid(34121)
 
-local requiredItemId = 61704
+local requiredItemId = 61703 -- Roulette Coin (was 61704 Spin Coin)
 local requiredItemCount = 1
 local cooldownTime = 1
 local spinTime = 8

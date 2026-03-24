@@ -1,3 +1,5 @@
+--[[ Task System (disabled - ID 51962 used by Mount Chest)
+
 local taskItemAction = Action()
 
 function taskItemAction.onUse(player, item, fromPosition, target, toPosition, isHotkey)
@@ -141,3 +143,5 @@ function acceptedTaskModalWindow(player)
     window:addButton("Back", function() sendTaskModalWindow(player) end)
     window:sendToPlayer(player)
 end
+
+]]

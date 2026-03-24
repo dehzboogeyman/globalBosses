@@ -23,9 +23,9 @@ monster.bosstiary = {
 	bossRace = RARITY_ARCHFOE,
 }
 
-monster.health = 450000
-monster.maxHealth = 450000
-monster.race = "undead"
+monster.health = 150000
+monster.maxHealth = 150000
+monster.race = "fire"
 monster.corpse = 36847
 monster.speed = 0
 monster.manaCost = 0
@@ -70,34 +70,36 @@ monster.voices = {
 }
 
 monster.loot = {
-	{ name = "crystal coin", chance = 100000, maxCount = 60 },
-	{ name = "ultimate mana potion", chance = 32653, maxCount = 14 },
-	{ name = "ultimate health potion", chance = 30612, maxCount = 14 },
-	{ name = "bullseye potion", chance = 24490, maxCount = 5 },
-	{ name = "berserk potion", chance = 22449, maxCount = 5 },
-	{ name = "mastermind potion", chance = 18367, maxCount = 5 },
-	{ name = "giant amethyst", chance = 6122 },
-	{ name = "giant ruby", chance = 4082 },
-	{ name = "giant emerald", chance = 4082 },
-	{ name = "giant sapphire", chance = 2041 },
-	{ name = "giant topaz", chance = 2041 },
+	{ name = "crystal coin", chance = 100000, maxCount = 3 },
+	{ name = "ultimate health potion", chance = 30612, maxCount = 15 },
+	{ name = "ultimate mana potion", chance = 32653, maxCount = 17 },
+	{ name = "ultimate spirit potion", chance = 28000, maxCount = 14 },
+	{ name = "berserk potion", chance = 22449, maxCount = 6 },
+	{ name = "bullseye potion", chance = 24490, maxCount = 6 },
+	{ name = "mastermind potion", chance = 18367, maxCount = 6 },
+	{ name = "transcendence potion", chance = 16000, maxCount = 7 },
+	{ name = "giant amethyst", chance = 6122, maxCount = 3 },
+	{ name = "giant emerald", chance = 4082, maxCount = 2 },
+	{ name = "giant sapphire", chance = 2041, maxCount = 2 },
+	{ name = "giant topaz", chance = 2041, maxCount = 3 },
 	{ name = "fiery tear", chance = 1000 },
-	{ name = "arboreal tome", chance = 250 },
-	{ name = "arboreal crown", chance = 250 },
-	{ name = "spiritthorn armor", id = 39147, chance = 250 },
-	{ name = "spiritthorn helmet", id = 39148, chance = 250 },
+	{ name = "firefighting axe", chance = 500 },
+	{ name = "portable flame", chance = 500 },
+	{ name = "smoldering eye", chance = 500 },
 	{ name = "alicorn headguard", chance = 250 },
 	{ name = "alicorn quiver", chance = 250 },
-	{ name = "arcanomancer regalia", chance = 250 },
+	{ id = 39180, chance = 250 },
+	{ name = "arboreal crown", chance = 250 },
+	{ name = "arboreal tome", chance = 250 },
+	{ id = 39186, chance = 250 },
 	{ name = "arcanomancer folio", chance = 250 },
+	{ name = "arcanomancer regalia", chance = 250 },
+	{ id = 39183, chance = 250 },
 	{ name = "ethereal coned hat", chance = 250 },
-	{ id = 50149, chance = 250 }, -- name = "charged ethereal ring"
-	{ id = 39183, chance = 250 }, -- name = "charged arcanomancer sigil"
-	{ id = 39186, chance = 250 }, -- name = "charged arboreal ring"
-	{ id = 39180, chance = 250 }, -- name = "charged alicorn ring"
-	{ id = 39177, chance = 250 }, -- name = "charged spiritthorn ring"
-	{ name = "portable flame", chance = 250 },
-	{ name = "firefighting axe", chance = 250 },
+	{ id = 50149, chance = 250 },
+	{ name = "spiritthorn armor", id = 39147, chance = 250 },
+	{ name = "spiritthorn helmet", id = 39148, chance = 250 },
+	{ id = 39177, chance = 250 },
 }
 
 monster.attacks = {
@@ -116,16 +118,16 @@ monster.defenses = {
 }
 
 monster.elements = {
-	{ type = COMBAT_PHYSICALDAMAGE, percent = 0 },
-	{ type = COMBAT_ENERGYDAMAGE, percent = 0 },
-	{ type = COMBAT_EARTHDAMAGE, percent = 100 },
-	{ type = COMBAT_FIREDAMAGE, percent = 0 },
+	{ type = COMBAT_PHYSICALDAMAGE, percent = 100 },
+	{ type = COMBAT_ENERGYDAMAGE, percent = 100 },
+	{ type = COMBAT_EARTHDAMAGE, percent = -100 },
+	{ type = COMBAT_FIREDAMAGE, percent = 100 },
 	{ type = COMBAT_LIFEDRAIN, percent = 0 },
 	{ type = COMBAT_MANADRAIN, percent = 0 },
 	{ type = COMBAT_DROWNDAMAGE, percent = 0 },
-	{ type = COMBAT_ICEDAMAGE, percent = 0 },
-	{ type = COMBAT_HOLYDAMAGE, percent = 0 },
-	{ type = COMBAT_DEATHDAMAGE, percent = 0 },
+	{ type = COMBAT_ICEDAMAGE, percent = 100 },
+	{ type = COMBAT_HOLYDAMAGE, percent = 100 },
+	{ type = COMBAT_DEATHDAMAGE, percent = 100 },
 }
 
 monster.immunities = {
